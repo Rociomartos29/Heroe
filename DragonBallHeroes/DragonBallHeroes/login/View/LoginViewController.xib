@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="DragonBallHeroes" customModuleProvider="target">
             <connections>
                 <outlet property="LoginImage" destination="FFz-hK-d3f" id="Cj1-3B-ulE"/>
+                <outlet property="buttonLogin" destination="GLT-Yu-HsZ" id="PNk-fT-qvz"/>
                 <outlet property="emailTextFile" destination="FZN-f3-7jc" id="gAW-be-gD5"/>
                 <outlet property="loginImage" destination="FFz-hK-d3f" id="9Qw-FB-mYL"/>
                 <outlet property="passwordTextFile" destination="bmW-NH-dj1" id="BwC-Mk-mre"/>
@@ -22,15 +23,9 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="fondo4" translatesAutoresizingMaskIntoConstraints="NO" id="FFz-hK-d3f">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fondo4" translatesAutoresizingMaskIntoConstraints="NO" id="FFz-hK-d3f">
                     <rect key="frame" x="-81" y="-21" width="576" height="897"/>
-                    <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="554.66999999999996" id="Mlg-gJ-seB"/>
-                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="715" id="ZmF-k1-8aG"/>
-                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="ay3-EP-aBg"/>
-                        <constraint firstAttribute="height" constant="128" id="dH1-md-aL6"/>
-                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="128" id="eUC-yP-K0d"/>
-                    </constraints>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="pkq-LI-ILB">
                     <rect key="frame" x="16" y="339" width="361" height="174.33333333333337"/>

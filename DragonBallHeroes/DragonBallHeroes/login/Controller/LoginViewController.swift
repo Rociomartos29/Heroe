@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
             guard let self = self else { return }
             
             switch result {
-            case .success(let user):
+            case .success( _):
                 DispatchQueue.main.async {
                     self.navigateToHeroes()
                 }

@@ -42,6 +42,29 @@ final class NetworkModel {
     func login(user: String, password: String, completion: @escaping (Result<User, Error>) -> Void) {
             
         }
+    func getCustomItems(completion: @escaping (Result<[HeroeTransformation], CustomNetworkError>) -> Void) {
+    let customItemsEndpoint = baseURL.appendingPathComponent("/api/heroes/customItems")
+            
+            guard let customItemsURL = URL(string: customItemsEndpoint.absoluteString) else {
+                completion(.failure(.malformedURL))
+                return
+            }
+            
+            guard let authToken = authToken else {
+                completion(.failure(.tokenNotFound))
+                return
+            }
+            
+            customAPIClient.fetchTransformations(url: customItemsURL, authToken: authToken, heroId: "") { (result: Result<[HeroeTransformation], CustomNetworkError>) in
+                switch result {
+                case let .success(customItems):
+                    completion(.success(customItems))
+                case let .failure(error):
+                    completion(.failure(error))
+                }
+            }
+        }
+        
     static let shared = NetworkModel()
     func getDetails(id: Int, completion: @escaping (Details?, Error?) -> Void) {
         guard let url = URL(string: "https://dragonball.keepcoding.education/api/details/\(id)") else {
